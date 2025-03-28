@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #fbfbfb;
+    --number-bg-color: #e2e4e4;
+    --number-active-bg-color: #dadada;
+    --number-width: 16px;
+    --number-padding: 8px 8px;
+    --number-font-size: 20px;
+    --number-font-color: #444;
+
+    --green-color: #2fca00;
+    --red-color: #ff00ca;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    background: none;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--bg-color);
+}
+
+#App {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    gap: 10px 0;
+    margin: 60px auto;
+}
+#App:first-child::before {
+    content: '3,';
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: -115% 8%;
+    scale: 1.4;
+    padding: var(--number-padding);
+    color: var(--number-font-color);
+}
+
+.pi-block {
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    transition: .3s background;
+}
+
+.pi-number {
+    width: var(--number-width);
+    padding: var(--number-padding);
+    
+    text-align: center;
+    font-size: var(--number-font-size);
+    color: var(--number-font-color);
+    background-color: var(--number-bg-color);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    caret-color: transparent;
+
+    /* box-shadow: 1px 1px 0px 2px #444; */
+
+    opacity: 1;
+    transition: 0.3s all;
+}
+
+.pi-number[empty]:not(:focus) {
+    opacity: 0.6;
+}
+.pi-number:focus {
+    background-color: var(--number-active-bg-color);
+    border: 1px solid #999;
+    box-shadow: 0px 1px 1px 0px #777;
+}
+
+ 
+.pi-number.jumped {
+    translate: 0 -50%;
+}
+.pi-number.correct {
+    background-color: var(--green-color);
+}
+
+.pi-block.correct {
+    background-color: var(--green-color);
+}
+.pi-block.correct .pi-number {
+    background: none;
+}
+.pi-block.shaked {
+    animation: shake-shake .3s;
+    border: 2px solid var(--red-color);
+}
+
+
+#Progress {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #4447;
+    border-radius: 30px;
+    color: var(--number-font-color);
+}
+
+
+
+@keyframes shake-shake {
+    0% {
+        translate: 0% 0%;
+    }
+    30% {
+        translate: 3% 0%;
+    }
+    60% {
+        translate: -3% 0%;
+    }
+    75% {
+        translate: 2% 0%;
+    }
+    90% {
+        translate: -2% 0%;
+    }
+    100% {
+        translate: 0% 0%;
+    }
+}
