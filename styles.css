@@ -2,8 +2,8 @@
     --bg-color: #fbfbfb;
     --number-bg-color: #e2e4e4;
     --number-active-bg-color: #dadada;
-    --number-width: 16px;
-    --number-padding: 8px 8px;
+    --number-width: 50px;
+    --number-padding: 14px 14px;
     --number-font-size: 20px;
     --number-font-color: #444;
 
@@ -30,11 +30,13 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: fit-content;
+    justify-content: center;
+    width: calc(100% - min(20%, 60px));
     gap: 10px 0;
     margin: 60px auto;
+    min-width: 400px;
 }
-#App:first-child::before {
+.pi-block:first-child::before {
     content: '3,';
     position: absolute;
     top: 0;
@@ -46,6 +48,7 @@ html, body {
 }
 
 .pi-block {
+    position: relative;
     display: flex;
     flex-direction: row;
     border-radius: 8px;
