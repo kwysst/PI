@@ -37,7 +37,7 @@ const newInput = (() => {
         const self = event.target;
         const $block = self.closest('.pi-block');
 
-        if (self.value === '?')
+        if (self.value === '?' || self.value === '+')
             self.value = self.getAttribute("hidden-value");
 
         if (isNaN(parseInt(self.value.slice(-1)))) {
@@ -50,15 +50,6 @@ const newInput = (() => {
         self.value.length > 0
             ? self.removeAttribute("empty")
             : self.setAttribute("empty", "1");
-
-
-        if (self.value === self.getAttribute("hidden-value")) {
-            // self.classList.add('correct');
-            // self.classList.remove('incorrect');
-            // self.setAttribute('disabled', '1');
-            // $block.setAttribute('correct-count', $block.getAttribute('correct-count'))
-            
-        }
 
         inputs.focusNext(self);
 
