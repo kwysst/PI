@@ -4,8 +4,11 @@
     --number-active-bg-color: #dadada;
     --number-width: 50px;
     --number-padding: 14px 14px;
-    --number-font-size: 20px;
+    --number-font-size: 30px;
     --number-font-color: #444;
+
+    --counter-width: 200px;
+    --counter-height: 80px;
 
     --green-color: #2fca00;
     --red-color: #ff00ca;
@@ -33,7 +36,7 @@ html, body {
     justify-content: center;
     width: calc(100% - min(20%, 60px));
     gap: 10px 0;
-    margin: 60px auto;
+    margin: 60px auto 120px;
     min-width: 400px;
 }
 .pi-block:first-child::before {
@@ -109,12 +112,13 @@ html, body {
     align-items: center;
     bottom: 20px;
     right: 20px;
-    width: 100px;
-    height: 40px;
+    width: var(--counter-width);
+    height: var(--counter-height);
     background: #fff;
     border: 1px solid #4447;
-    border-radius: 30px;
+    border-radius: var(--counter-height);
     color: var(--number-font-color);
+    font-size: var(--number-font-size);
 }
 
 
