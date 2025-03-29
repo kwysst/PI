@@ -4,7 +4,7 @@
     --number-active-bg-color: #dadada;
     --number-width: 50px;
     --number-padding: 14px 14px;
-    --number-font-size: 30px;
+    --number-font-size: 48px;
     --number-font-color: #444;
 
     --counter-width: 200px;
@@ -44,8 +44,9 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    translate: -115% 8%;
-    scale: 1.4;
+    translate: -115%;
+    scale: 1.2;
+    font-size: var(--number-font-size);
     padding: var(--number-padding);
     color: var(--number-font-color);
 }
